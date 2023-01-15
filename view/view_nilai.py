@@ -1,23 +1,19 @@
-import time
-
-
+from model.daftar_nilai import *
 def Jdl_Tbl():
     print("=========================================================================")
     print("| No |     NIM     |       NAMA        |  TUGAS  |  UTS | UAS |  AKHIR  |")
     print("=========================================================================")
 
-
 def foot_Tbl():
     print("=========================================================================")
 
 
-def cetak_daftar_nilai(df):
+def cetak_daftar_nilai():
     print("Mencetak daftar nilai...")
     Jdl_Tbl()
     if (len(df) == 0):
         print("Belum ada data / Kosong")
     else:
-        time.sleep(1)
         x = 1
         for i, j in df.items():
             print('| {0:^3}| {1:11} | {2:<17} | {3:7} | {4:4} | {5:3} | {6:7.2f} |'.format(
@@ -26,9 +22,9 @@ def cetak_daftar_nilai(df):
         foot_Tbl()
 
 
-def cetak_hasil_pencarian(df, dn):
+def cetak_hasil_pencarian():
     print("mencetak hasil cari nilai...")
     nama = input("Cari Data nilai berdasarkan Nama : ")
     Jdl_Tbl()
-    dn.Cari_data(df, nama)
+    Cari_data( nama)
     foot_Tbl()
