@@ -1,19 +1,21 @@
-import view.view_nilai as view
-import view.input_nilai as inp
-import model.daftar_nilai as dn
-DaftarNilai = {}
+from view.input_nilai import *
+from model.daftar_nilai import *
+from view.view_nilai import *
+print("|-------------------------------------------------------------------|")
+print("|--------------------PROGRAM NILAI MAHASISWA------------------------|")
+print("|-------------------------------------------------------------------|")
 while True:
     menu = input(
         "Pilih Menu : (L)ihat (T)ambah (U)bah (H)apus (C)ari (X)Exit : ").capitalize()
     if (menu == "L"):
-        view.cetak_daftar_nilai(DaftarNilai)
+        cetak_daftar_nilai()
     if (menu == "T"):
-        inp.input_data(DaftarNilai, dn)
+        input_data()
     if (menu == "U"):
-        dn.Ubah_data(DaftarNilai)
+        Ubah_data()
     if (menu == "H"):
-        dn.Hapus_data()
+        Hapus_data()
     if (menu == "C"):
-        view.cetak_hasil_pencarian(DaftarNilai, dn)
+        cetak_hasil_pencarian()
     if (menu == "X"):
         break

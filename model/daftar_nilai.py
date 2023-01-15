@@ -1,6 +1,5 @@
-
-
-def tambah_data(df, nim, nama, tugas, uts, uas):
+df = {}
+def tambah_data(nim, nama, tugas, uts, uas):
     print("Menambahkan Data..")
     akhir = ((int(tugas) / 100*30) + (int(uts)/100*35) + (int(uas) / 100*35))
     df[nim] = {"nama": nama, "tugas": tugas,
@@ -8,7 +7,7 @@ def tambah_data(df, nim, nama, tugas, uts, uas):
     print("Data Berhasil tersimpan")
 
 
-def Ubah_data(df):
+def Ubah_data():
     found = 0
     nama = input("Cari Data Mahasiswa yang ingin di ubah : ")
     for i, j in df.items():
@@ -37,10 +36,19 @@ def Ubah_data(df):
 
 
 def Hapus_data():
-    print("Hapus Data..")
+        nama = input("Masukan NIM mahasiswa yang ingin di hapus datanya")
+        found = 0
+        for i, j in dn.items():
+           if ((dn.get(i)).get('nama') == nama):
+               found = i 
+        if (found ==0):
+           print("Data tidak ada")
+        else :
+           dn.pop(i)
+           print("Berhasil menghapus mahasiswa yang bernama "+nama)
 
-
-def Cari_data(df, nama):
+    
+def Cari_data(nama):
     x, found = 0, 0
     for i, j in df.items():
         x += 1
